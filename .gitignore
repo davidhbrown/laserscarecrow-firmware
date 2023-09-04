@@ -1,0 +1,4 @@
+/node_modules/*
+!/node_modules/esp-web-tools
+!/node_modules/esp-web-tools/dist
+!/node_modules/esp-web-tools/dist/web

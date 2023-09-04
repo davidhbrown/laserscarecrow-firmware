@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "esp-web-tools": "^9.4.0"
+  }
+}

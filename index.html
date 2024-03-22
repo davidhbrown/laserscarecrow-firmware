@@ -18,19 +18,61 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
         src="node_modules/esp-web-tools/dist/web/install-button.js"
 ></script-->
 <h1>URI Laser Scarecrow Firmware Updater</h1>
-<h2>2022 Model - circular green main board</h2>
+<p><em>Huge thanks and credit to <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>
+    for making this (relatively) easy to use!</em></p>
+<h2>General instructions</h2>
+<p>You will need a </p>
+<p><strong style="color: #600">Be certain to select the correct model firmware!</strong>
+    If you try to use the wrong firmware, it won't work (and you might damage something).
+</p>
+<div id="2022">
+    <img src="2022_model.jpg" style="float: right; clear: right; max-width: 30%;">
+<h2>
+    2022 Model - circular green main board
+</h2>
+    <p>
+    This is an updated firmware (1.3.0) that has an improved algorithm
+    for random motion when the active area is small. Useful if, for example, you
+        position the scarecrow at the corner of a field.
+    </p>
 <!--
 C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users\dave\esp\esp-idf\components\esptool_py\esptool\esptool.py --chip esp32 merge_bin --output ls2022-1.3.0.bin --flash_mode dio --flash_freq 40m --flash_size 8MB 0x1000 ./bootloader/bootloader.bin 0x8000 ./partition_table/partition-table.bin 0x10000 ./ls2022_esp32.bin
 -->
 <esp-web-install-button
         manifest="ls2022-1.3.0_manifest.json"
 ></esp-web-install-button>
+</div>
+<div id="2023">
+    <img src="2023_model.jpg" style="float: right; clear: right; max-width: 30%;">
 <h2>2023 Model - circular blue main board</h2>
 <!--
 C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users\dave\esp\esp-idf\components\esptool_py\esptool\esptool.py --chip esp32 merge_bin --output ls2023-2.0.0.bin --flash_mode dio --flash_freq 40m --flash_size 8MB 0x1000 ./bootloader/bootloader.bin 0x8000 ./partition_table/partition-table.bin 0x10000 ./ls2022_esp32.bin
 -->
+    <p>
+        This the originally released firmware (2.0.0).
+    </p>
 <esp-web-install-button
         manifest="ls2023-2.0.0_manifest.json"
 ></esp-web-install-button>
+</div>
+<h2>Replacing the ESP32-DevKitC microcontroller module</h2>
+<p>The microcontroller in these modules is the Espressif ESP32-DEVKITC-VIE. We have purchased them from...
+<ul>
+    <li>
+        <a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-VIE/12091811">Digikey</a>
+    </li>
+    <li>
+        <a href="https://www.mouser.com/ProductDetail/Espressif-Systems/ESP32-DevKitC-VIE?qs=vmHwEFxEFR%252B9L5ZhUgeToA%3D%3D">Mouser</a>
+    </li>
+</ul>
+</p>
+<p>
+You should be able to substitute the ESP32-DevKitC-VE. (The only difference is in the antenna which we don't use.)
+While these are still (Aug 2023) current products, be careful if you search for a replacement online
+(e.g., Amazon, eBay) as you're may find more recent variations such as an ESP32-S2/S3/C3
+that aren't quite the same.
+</p>
+
+
 </body>
 </html>

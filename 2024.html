@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- from ./build directory, run command:
+C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users\dave\esp\esp-idf\components\esptool_py\esptool\esptool.py --chip esp32 merge_bin --output ls2024-2.3.0.bin --flash_mode dio --flash_freq 40m --flash_size 8MB 0x1000 ./bootloader/bootloader.bin 0x8000 ./partition_table/partition-table.bin 0x10000 ./ls2022_esp32.bin
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2024 Firmware</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<script
+        type="module"
+        src="https://unpkg.com/esp-web-tools@9/dist/web/install-button.js?module"
+></script>
+<h1>URI Laser Scarecrow 2024 Model Firmware</h1>
+<p>To use this web page, you must 1) use the Chrome or Edge browser,
+    2) allow scripts to load from https://unpkg.com/,
+3) install the USB-Serial communications driver for the module (see below)</p>
+<h2>Step 1: Confirm correct model</h2>
+<p>The 2024 model was supplied fully built, not as a kit as was the case in previous years.
+    They have a green, octagonal main circuit board inside the bucket.</p>
+<p>If this doesn't match your scarecrow, please <a href="/">return to the home page</a>.</p>
+<h2>Step 2: Connect the microcontroller</h2>
+<p class="caution">Electronics like the microcontroller and other parts in the scarecrow can be damaged
+or destroyed by static electricity. Before working with electronic components...
+    ⚡&nbsp;Discharge static electricity built up in your body by touching a cold water pipe or an unpainted center
+    screw in a duplex electrical outlet.
+    ⚡&nbsp;Avoid synthetic fabrics such as polyfleece.
+</p>
+<p>The scarecrow should be turned off and disconnected from 12V power (you don't need it).
+    Put the cap on the laser module.</p>
+<p>Use a good quality USB micro-B data cable (a charging-only cable won't work)
+    to connect your computer to the ESP32 microcontroller on the circuit board.
+    If making this connection is awkward (e.g., your cable is short), you may remove the microcontroller from
+    the main board by holding the sides and pulling it straight up out of the socket.</p>
+<p class="info">When connected to USB and still plugged into the main board, the scarecrow may make some sounds from the buzzer, including error tones. This is not a problem when updating the firmware.</p>
+<p>Your operating system may need a driver to communicate with the module over USB.
+The EPS32 DevkitC modules we use have used the CP2102 USB interface chip from Silicon Labs, though there's a chance your could be different.
+If your computer doesn't install it automatically, you can download the CP210x series driver
+from <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads">
+        https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads
+    </a>.</p>
+<h2>Step 3: Update the firmware</h2>
+<p>Click the button below and follow its instructions:</p>
+<esp-web-install-button
+        manifest="ls2024-2.3.0_manifest.json"
+></esp-web-install-button>
+<h2>Step 4: Disconnect the cable</h2>
+<p>After the firmware has been updated, unplug the cable.</p>
+<p>If you removed the microcontroller for easier access, replace it. Align each pin on the microcontroller with a hole
+    in the sockets. Be sure that  the USB micro connector is on the side of the board that also has the buzzer connector.
+Push straight down on the pins on the sides until the microcontroller board is flush with the top of the sockets.</p>
+<h2>Step 5: Run a self-test</h2>
+<p>The self-test procedure is in the URI Laser Scarecrow Operating Manual.
+    If you need a copy, please visit <a href="https://laserscarecrow.info/">https://laserscarecrow.info/</a>.</p>
+</body>
+</html>

@@ -1,5 +1,8 @@
+@import "bootstrap/css/bootstrap.min.css";
+
 body {
-    font-family: sans-serif;
+    max-width: 60em;
+    margin: auto;
 }
 
 .caution {

@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>2023 Firmware</title>
+    <title>2023 Firmware for URI Laser Scarecrow</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-
+<script
+        type="module"
+        src="https://unpkg.com/esp-web-tools@9/dist/web/install-button.js?module"
+></script>
+<div id="2023">
+    <img src="images/2023_model.jpg" style="float: right; clear: right; max-width: 30%;">
+    <h2>2023 Model - circular blue main board</h2>
+    <!--
+    C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users\dave\esp\esp-idf\components\esptool_py\esptool\esptool.py --chip esp32 merge_bin --output ls2023-2.0.0.bin --flash_mode dio --flash_freq 40m --flash_size 8MB 0x1000 ./bootloader/bootloader.bin 0x8000 ./partition_table/partition-table.bin 0x10000 ./ls2022_esp32.bin
+    -->
+    <p>
+        This is the originally released firmware (2.0.0).
+    </p>
+    <esp-web-install-button
+            manifest="ls2023-2.0.0_manifest.json"
+    ></esp-web-install-button>
+</div>
 </body>
 </html>

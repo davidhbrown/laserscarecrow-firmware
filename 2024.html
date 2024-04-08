@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- from ./build directory, run command:
-C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users\dave\esp\esp-idf\components\esptool_py\esptool\esptool.py --chip esp32 merge_bin --output ls2024-2.3.0.bin --flash_mode dio --flash_freq 40m --flash_size 8MB 0x1000 ./bootloader/bootloader.bin 0x8000 ./partition_table/partition-table.bin 0x10000 ./ls2022_esp32.bin
+C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users\dave\esp\esp-idf\components\esptool_py\esptool\esptool.py --chip esp32 merge_bin --output ls2024-2.3.2.bin --flash_mode dio --flash_freq 40m --flash_size 8MB 0x1000 ./bootloader/bootloader.bin 0x8000 ./partition_table/partition-table.bin 0x10000 ./ls2022_esp32.bin
 -->
 <html lang="en">
 <head>
@@ -14,6 +14,22 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
         src="https://unpkg.com/esp-web-tools@9/dist/web/install-button.js?module"
 ></script>
 <h1>URI Laser Scarecrow 2024 Model Firmware</h1>
+<p>Firmware is the program that gives a device its behavior. (Like software for a general-purpose computer but closely
+tied to specific hardware... I guess the idea is somewhere between soft and hard is firm.) In the URI Laser Scarecrow,
+the behavior is managed by a microcontroller &mdash; a small system-on-a-chip optimized for controlling hardware &mdash;
+    and the microcontroller holds the laser scarecrow firmware. </p>
+<p>Occasionally we make small changes to the behavior of the URI laser scarecrow after the kits or devices have
+shipped out. You can update your unit to take advantage of these changes here.
+    Or if you needed to replace the microcontroller, you could program the new one using this page.</p>
+<h2>What you need</h2>
+<ul>
+    <li>A computer (not just a phone or tablet) and the Chrome or Edge browser (not Firefox nor Safari)</li>
+    <li>A USB micro-B data cable to connect to your computer. One end should look like this:</li>
+        <img src="images/USB_Micro-B.svg" style="max-height: 2em;">
+     and the other end should connect to your computer. It should also work if you need an adapter between your computer and the cable.
+    <br><span class="small">(USB micro-b image adapted from work by Fred the Oyster, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=36172898)</span>
+    <li>One time-only: you'll need to install a driver so your computer can control the microcontoller</li>
+</ul>
 <p>To use this web page, you must 1) use the Chrome or Edge browser,
     2) allow scripts to load from https://unpkg.com/,
 3) install the USB-Serial communications driver for the module (see below)</p>
@@ -44,7 +60,7 @@ from <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?t
 <h2>Step 3: Update the firmware</h2>
 <p>Click the button below and follow its instructions:</p>
 <esp-web-install-button
-        manifest="ls2024-2.3.1_manifest.json"
+        manifest="ls2024-2.3.2_manifest.json"
 ></esp-web-install-button>
 <h2>Step 4: Disconnect the cable</h2>
 <p>After the firmware has been updated, unplug the cable.</p>

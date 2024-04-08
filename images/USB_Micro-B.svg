@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   x="0"
+   y="0"
+   width="320.10001"
+   height="108.9"
+   viewBox="0 0 320.10001 108.9"
+   id="svg20"
+   sodipodi:docname="USB_Micro-B.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs20" />
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="5.7111111"
+     inkscape:cx="160.03891"
+     inkscape:cy="88.424125"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="3229"
+     inkscape:window-y="1246"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg20" />
+  <style
+     type="text/css"
+     id="style1">&#10;	.st0{fill:#B3B3B3;stroke:#000;stroke-width:8;stroke-linejoin:round;}&#10;	.st1{fill:#E6E6E6;stroke:#000;stroke-width:4;stroke-linejoin:round;}&#10;	.st2{fill:#FFFF00;stroke:#000;stroke-linejoin:round;}&#10;	.st3{fill:#FFFFFF;stroke:#000;stroke-linejoin:round;}&#10;	.st4{fill:#B3B3B3;stroke:#000;stroke-width:2;stroke-linejoin:round;}&#10;	.st5{font-family:Liberation Sans,sans-serif;}&#10;	.st6{font-size:48px;}&#10;	.st7{font-size:60px;}&#10;</style>
+  <g
+     id="usb"
+     transform="translate(-65,-61.599998)">
+    <path
+       class="st0"
+       d="m 69,95.5 v 34.7 c 0,3.4 1.4,6.7 4,9 l 26.4,24.1 c 2.2,2 5.1,3.2 8.2,3.2 h 234.9 c 3,0 5.9,-1.1 8.2,-3.2 l 26.4,-24.1 c 2.5,-2.3 4,-5.5 4,-9 V 95.5 c 0,-2.7 -2.2,-4.9 -4.9,-4.9 H 73.9 C 71.2,90.5 69,92.8 69,95.5 Z"
+       id="path1" />
+    <rect
+       x="141"
+       y="92.5"
+       class="st1"
+       width="168"
+       height="37"
+       id="rect1" />
+    <path
+       d="m 158.5,86.6 h -13.3 c -1,0 -1.9,-0.8 -1.9,-1.9 v -0.3 c 0,-1 0.8,-1.9 1.9,-1.9 h 13.3 c 1,0 1.9,0.8 1.9,1.9 v 0.3 c 0,1.1 -0.8,1.9 -1.9,1.9 z"
+       id="path2" />
+    <path
+       d="m 231.6,86.6 h -13.3 c -1,0 -1.9,-0.8 -1.9,-1.9 v -0.3 c 0,-1 0.8,-1.9 1.9,-1.9 h 13.3 c 1,0 1.9,0.8 1.9,1.9 v 0.3 c 0,1.1 -0.8,1.9 -1.9,1.9 z"
+       id="path3" />
+    <path
+       d="m 309.5,86.6 h -13.3 c -1,0 -1.9,-0.8 -1.9,-1.9 v -0.3 c 0,-1 0.8,-1.9 1.9,-1.9 h 13.3 c 1,0 1.9,0.8 1.9,1.9 v 0.3 c 0,1.1 -0.8,1.9 -1.9,1.9 z"
+       id="path4" />
+    <g
+       id="pins">
+      <rect
+         x="221.5"
+         y="115"
+         class="st2"
+         width="7"
+         height="25"
+         id="rect4" />
+      <rect
+         x="190.89999"
+         y="115"
+         class="st2"
+         width="7"
+         height="25"
+         id="rect5" />
+      <rect
+         x="160.3"
+         y="115"
+         class="st2"
+         width="7"
+         height="25"
+         id="rect6" />
+      <rect
+         x="252.10001"
+         y="115"
+         class="st2"
+         width="7"
+         height="25"
+         id="rect7" />
+      <rect
+         x="282.70001"
+         y="115"
+         class="st2"
+         width="7"
+         height="25"
+         id="rect8" />
+      <rect
+         x="160.3"
+         y="140"
+         class="st3"
+         width="7"
+         height="10"
+         id="rect9" />
+      <rect
+         x="190.89999"
+         y="140"
+         class="st3"
+         width="7"
+         height="10"
+         id="rect10" />
+      <rect
+         x="221.5"
+         y="140"
+         class="st3"
+         width="7"
+         height="10"
+         id="rect11" />
+      <rect
+         x="252.10001"
+         y="140"
+         class="st3"
+         width="7"
+         height="10"
+         id="rect12" />
+      <rect
+         x="282.70001"
+         y="140"
+         class="st3"
+         width="7"
+         height="10"
+         id="rect13" />
+    </g>
+    <rect
+       x="108.1"
+       y="62.599998"
+       class="st4"
+       width="18"
+       height="25"
+       id="rect14" />
+    <rect
+       x="323.89999"
+       y="62.599998"
+       class="st4"
+       width="18"
+       height="25"
+       id="rect15" />
+  </g>
+</svg>

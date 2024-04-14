@@ -42,7 +42,7 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     <li>If you have set your browser to block third-party scripts, allow scripts to load from https://unpkg.com/</li>
     <li>One time-only: you'll possibly need to install a driver so your computer can talk to the microcontoller</li>
 </ul>
-<h2>Step 1: Connect the microcontroller to your computer</h2>
+<h2 id="step1">Step 1: Connect the microcontroller to your computer</h2>
 <p class="caution">Electronics like the microcontroller and other parts in the scarecrow can be damaged
     or destroyed by static electricity. Before working with electronic components...
     ⚡&nbsp;Discharge static electricity built up in your body by touching a cold water pipe or an unpainted center
@@ -65,11 +65,20 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
             <img src="images/2023_esp32_usb.png"></figure>
     </div>
 </section>
-<p>
-    If making this connection is awkward (e.g., your cable is short), you may remove the microcontroller from
-    the main board by holding the sides and pulling it straight up out of the socket.</p>
 <p class="info">When connected to USB and still plugged into the main board, the scarecrow may make some sounds from the
     buzzer, including error tones. This is not a problem when updating the firmware.</p>
+<h3>Remove the microcontroller if necessary</h3>
+<div class="d-sm-flex flex-sm-row">
+    <p>
+        If your cable is too short or if you just can't get it to plug in, you may remove the microcontroller from the
+        main
+        board by tucking your thumb under the circuit board below the USB connector and your finger
+        far enough past the thin flat antenna that you can lift the actual circuit board (see photo; all models are
+        similar),
+        then pull it straight up out of the sockets.</p>
+    <p class="ms-sm-2"><img src="images/microcontroller_removal.jpg"
+                            alt="close-up photograph of removing the EPS32 microcontroller"></p>
+</div>
 <h2 id="step2">Step 2: Install the driver, if needed</h2>
 <p>Your computer might install the driver for you automatically when you connect the microcontroller. The easiest way to
     tell is if a confirmation (or error message) appears.
@@ -84,7 +93,8 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
 <p>After downloading, unzip and run the installer.</p>
 <h2>Step 3: Install the firmware for your scarecrow</h2>
 <p>Click to select the model year of your scarecrow, then the &ldquo;Install...&rdquo; button that appears below it and
-    follow the instructions that appear (you can look at the <a href="#walkthrough">walkthrough</a> first if you like).
+    follow the instructions that appear (you can look at the <strong><a href="#walkthrough">walkthrough</a></strong>
+    first if you like).
     The model is also indicated on the label on the underside of the scarecrow.</p>
 <div class="container text-center">
     <div class="row align-items-start">
@@ -203,11 +213,24 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
 <h2>Step 4: Disconnect the cable</h2>
 <p>After the firmware has been updated, unplug the cable. (You don't need to &ldquo;eject&rdquo;/unmount it or
     anything.)</p>
+<h3>Replace the microcontroller (only if removed)</h3>
 <p>If you removed the microcontroller for easier access, replace it. Align each pin on the microcontroller with a hole
-    in the sockets. Be sure that the USB micro connector is on the side of the board that also has the buzzer connector.
-    Push straight down on the pins on the sides until the microcontroller board is flush with the top of the
-    sockets.</p>
+    in the sockets. Push straight down on the pins on the sides until the microcontroller board is flush with the top of
+    the sockets.</p>
+<div class="caution d-sm-flex flex-sm-row">
+    <p>It's possible to plug the microcontroller in rotated 180&deg;. This would surely damage it when turned on.
+        To be sure you have the correct rotation, see the images back in <strong><a href="#step1">Step 1</a></strong> &mdash; all
+        models
+        are similar in their arrangement. You can match the orientation of the module to the sketch shown here and
+        silk-screened (white on green or white on blue) on the board.
+        The USB micro connector is represented at the bottom of this sketch, between the two push buttons (circles in
+        rectangles).
+        The actual USB microconnector should be above that part of the image on the board.</p>
+    <p class="ms-sm-2"><img src="images/ESP32-DevKitC-silkscreen.png"
+                            alt="sketch of module as silk-screened on main board"></p>
+</div>
 <h2>Step 5: Run a self-test</h2>
+<p>It seems prudent to make sure your scarecrow works after all this!</p>
 <p>The self-test procedure is in the URI Laser Scarecrow Operating Manual.
     If you need a copy, please visit <a href="https://laserscarecrow.info/">https://laserscarecrow.info/</a>.</p>
 

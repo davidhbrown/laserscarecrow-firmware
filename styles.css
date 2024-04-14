@@ -44,3 +44,43 @@ body {
     padding: 0;
     float: left;
 }
+
+label > img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+label > button {
+    width: 100%;
+    padding: 0;
+}
+
+#walkthrough li a {
+    max-width: 128px;
+    transition: max-width 1s ease-in;
+    float: right;
+}
+#walkthrough li a:hover, #walkthrough li a:target {
+    max-width: 50%;
+    transition: max-width 0.5s ease-in;
+}
+
+#walkthrough li a img {
+    max-width: 100%;
+}
+
+#walkthrough > ul > li {
+    clear: right;
+}
+
+input[name="model"] {
+    display: none;
+}
+input[name="model"] + * {
+    display: none;
+}
+input[name="model"]:checked + * {
+    display: block;
+}

@@ -42,29 +42,35 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     <li>If you have set your browser to block third-party scripts, allow scripts to load from https://unpkg.com/</li>
     <li>One time-only: you'll possibly need to install a driver so your computer can talk to the microcontoller</li>
 </ul>
+
 <h2 id="step1">Step 1: Connect the microcontroller to your computer</h2>
 <p class="caution">Electronics like the microcontroller and other parts in the scarecrow can be damaged
     or destroyed by static electricity. Before working with electronic components...
-    ⚡&nbsp;Discharge static electricity built up in your body by touching a cold water pipe or an unpainted center
+    ⚡&nbsp;Discharge static electricity built up in your body by touching a cold water supply pipe or an unpainted center
     screw in a duplex electrical outlet.
     ⚡&nbsp;Avoid synthetic fabrics such as polyfleece.
 </p>
 <p>The scarecrow should be turned off and disconnected from 12V power (you don't need it).
     Put the cap on the laser module.</p>
-<p>Use a good quality USB micro-B data cable (a charging-only cable won't work)
-    to connect your computer to the ESP32 microcontroller on the circuit board.
-    If you rotate the scarecrow so the key switch is toward you, the ESP32 microcontroller is on the left and its USB
-    port is toward you.</p>
+<p>Open the scarecrow bucket and rotate it so that the key switch is toward you.
+    Find the microcontroller on the left side of the main circuit board.
+    It is about an inch wide and two inches tall with columns of silvery dots on either edge.</p>
+<p>Use a good quality USB micro-B data cable
+    to connect your computer to the microcontroller. (A charging-only cable like might have
+    come with an older phone won't work.) The USB
+    port is toward you and the wider side of the micro-B plug faces up. </p>
 <section class="container text-center">
     <div class="row align-items-start">
         <figure class="col">
-            <figcaption>ESP32 in 2023 scarecrow</figcaption>
+            <figcaption>ESP32 in 2023 scarecrow (no power)</figcaption>
             <img src="images/2023_esp32.png"></figure>
         <figure class="col">
-            <figcaption>USB cable plugged in (white)</figcaption>
+            <figcaption>USB cable plugged in (power LED on)</figcaption>
             <img src="images/2023_esp32_usb.png"></figure>
     </div>
 </section>
+<p class="info"><strong>Troubleshooting:</strong> Windows (but not macOS) will make a sound when you connect a device.
+    If the microcontroller's red power LED turns on but you don't hear anything, it might be you have a charging-only cable. </p>
 <p class="info">When connected to USB and still plugged into the main board, the scarecrow may make some sounds from the
     buzzer, including error tones. This is not a problem when updating the firmware.</p>
 <h3>Remove the microcontroller if necessary</h3>
@@ -79,27 +85,124 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     <p class="ms-sm-2"><img src="images/microcontroller_removal.jpg"
                             alt="close-up photograph of removing the EPS32 microcontroller"></p>
 </div>
-<h2 id="step2">Step 2: Install the driver, if needed</h2>
-<p>Your computer might install the driver for you automatically when you connect the microcontroller. The easiest way to
-    tell is if a confirmation (or error message) appears.
-    If nothing obvious happens, go ahead and see if it works. If the port can&rsquo;t be found, try downloading and
-    installing the driver yourself.</p>
-<p>The EPS32 DevkitC use the <strong>CP2102</strong> USB interface chip from Silicon Labs. You can download the CP210x
-    series driver
-    from <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads">
-        https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads
-    </a>. You'll probably want the &ldquo; Universal Windows Driver&rdquo; or the &ldquo;CP210x VCP Mac OSX Driver&rdquo;.
+<h2 id="step2">Step 2: Do you need to install the driver?</h2>
+<p>Your computer might install the driver for you automatically when you connect the microcontroller. If an error
+    message appears &mdash; especially if it's something
+    about not having a driver for the device &mdash; install the driver yourself. If you get a message about the device
+    being ready to use, go on to the next step.</p>
+
+<p>If nothing obvious happens, you can just go on to the next step and see if it works.</p>
+<h3>Installing the driver</h3>
+The EPS32 DevkitC use the <strong>CP2102</strong>
+USB interface chip from Silicon Labs. You can download the CP210x
+series driver
+from <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads">
+    https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads
+</a>.</p>
+<h4>Windows</h4>
+<p>Download and unzip the &ldquo;CP210x Universal Windows Driver&rdquo;. In that folder, right click
+    <code>silabser.inf</code>
+    and choose Install. (Windows does not display the .inf unless you open the View menu and tell it to Show Filename
+    Extensions.)
 </p>
-<p>After downloading, unzip and run the installer.</p>
+<p><em>Optional:</em> You can confirm whether the microcontroller is recognized by looking for it within &ldquo;Ports (COM &amp; LPT)&rdquo;
+    in the Device Manager. It should say &ldquo;Silicon Labs CP210x USB to UART Bridge (COM<em>#</em>)&rdquo; (the # is
+    some     one- or two-digit number).
+</p>
+<h4>macOS</h4>
+<p>Download and unzip the &ldquo;CP210x VCP Mac OSX Driver&rdquo;. Then double-click
+    <code>SiLabsUSBDriverDisk.dmg</code>
+    to open (mount) the disk image and install the driver.</p>
+<p>With macOS High Sierra 10.13 or later versions, you now have several minutes to go to the Apple menu, select System
+    Preferences,
+    Security &amp; Privacy, and find at the bottom of the tab where it says that System software from developer Silicon
+    Labs
+    was blocked. Click the Allow button.</p>
+<p><em>Optional:</em> To confirm that the microcontroller is connected, open the System Information, then within Hardware tree select USB.
+    Open all the items (busses, hubs) and you should find one (or more) named &ldquo;CP2102 USB to UART
+    Bridge&rdquo;.</p>
+<p class="info"><strong>Troubleshooting:</strong> Try a different cable. Try a different USB port on your computer
+    &mdash;
+    one directly on the computer can sometimes be more reliable than a hub. Try reloading this page. Try restarting your
+    computer.</p>
 <h2>Step 3: Install the firmware for your scarecrow</h2>
-<p>Click to select the model year of your scarecrow, then the &ldquo;Install...&rdquo; button that appears below it and
+The installer runs in a pop-up wizard that has limited help, so let's preview what you'll be seeing...
+<section id="walkthrough">
+    <h3>Installer walkthrough</h3>
+    <p class="small">Click the thumbnails to enlarge/reduce. Where to click in the screen captures is circled in
+        yellow.</p>
+    <ul>
+        <li><input id="walkthrough_1" type="checkbox" class="d-none">
+            <label for="walkthrough_1" class="btn border-1 border-info p-0 ms-2 d-block">
+                <img src="images/1-select_port.png"
+                     alt="screen capture showing port selection">
+            </label>
+            First, your browser will display a list of serial ports. Select the correct port (see the
+            Troubleshooting tips above) and click Connect.
+        <ul><li>If you don't see any CP210x ports, try reloading the page first and try again,
+            then check the driver and cable from the previous step </li>
+            <li>If you see multiple ports, unplug the Scarecrow's microcontroller and one should disappear.
+                Plug it in again and one should reappear: that's the one to select.</li></ul>
+        <li>
+            <input id="walkthrough_2" type="checkbox" class="d-none">
+            <label for="walkthrough_2" class="btn border-1 border-info p-0 ms-2">
+                <img src="images/2-device_dashboard.png" alt="screen capture showing device dashboard">
+            </label>
+            From the &ldquo;Device Dashboard&ldquo;, confirm that you
+            have selected the firmware for the correct model year, then click it if correct.
+            Click the close button at the upper right (&times;) to cancel.
+        </li>
+        <li>
+            <input id="walkthrough_3" type="checkbox" class="d-none">
+            <label for="walkthrough_3" class="btn border-1 border-info p-0 ms-2">
+                <img src="images/3-erase_device.png" alt="screen capture showing device erase option">
+            </label>
+            You have an option to erase the device. I have never found this to
+            be necessary, but it won't hurt if you feel like enabling that checkbox.
+            Click Next to continue or the close button at the upper right (&times;) to cancel.
+        </li>
+        <li>
+            <input id="walkthrough_4" type="checkbox" class="d-none">
+            <label for="walkthrough_4" class="btn border-1 border-info p-0 ms-2">
+                <img src="images/4-confirm.png" alt="screen capture showing confirmation">
+            </label>
+            Last chance to confirm that you are installing the correct firmware for your scarecrow!
+            You can still click the close button at the upper right (&times;) to cancel.
+        </li>
+        <li>
+            <input id="walkthrough_6" type="checkbox" class="d-none">
+            <label for="walkthrough_6" class="btn border-1 border-info p-0 ms-2">
+                <img src="images/6-complete.png" alt="screen capture showing completion">
+            </label>
+            After usually less than the estimated 2 minutes, you should see that the installation is complete. Click
+            next.
+        </li>
+        <li>
+            <input id="walkthrough_7" type="checkbox" class="d-none">
+            <label for="walkthrough_7" class="btn border-1 border-info p-0 ms-2">
+                <img src="images/7-dashboard_close.png"
+                     alt="screen capture showing dashboard with close button circled">
+            </label>
+            You will return to the dashboard and can click the close button at the upper right (&times;) to finish.
+            If you have any doubts about whether the microcontroller is running the correct firmware,
+            you may optionally click &ldquo;LOGS &amp; CONSOLE&rdquo;, then click &ldquo;RESET DEVICE&rdquo; and wait
+            to check the last line after everything finishes scrolling. Then click &ldquo;BACK&rdquo; and close the
+            updater or try again.
+        </li>
+
+    </ul>
+</section>
+<h3>Select the correct installer</h3>
+<p>Click to select the model year of your scarecrow, then click the &ldquo;Install...&rdquo; button that appears below
+    it and
     follow the instructions that appear (you can look at the <strong><a href="#walkthrough">walkthrough</a></strong>
     first if you like).
     The model is also indicated on the label on the underside of the scarecrow.</p>
-<div class="container text-center">
+<div class="container text-center mb-3">
     <div class="row align-items-start">
         <div class="col">
             <label for="model2024" class="btn btn-outline-primary p-0">
+                octagonal, green main board
                 <img src="images/2024_model.png" alt="The 2024 scarecrow has a green octagonal circuit board">
                 2024
             </label>
@@ -113,6 +216,7 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
         </div>
         <div class="col">
             <label for="model2023" class="btn btn-outline-primary p-0">
+                round, blue main board
                 <img src="images/2023_model.png" alt="The 2023 scarecrow has a blue circular circuit board">
                 2023
             </label>
@@ -127,6 +231,7 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
         </div>
         <div class="col">
             <label for="model2022" class="btn btn-outline-primary p-0">
+                round, green main board
                 <img src="images/2022_model.png" alt="The 2022 scarecrow has a green circular circuit board">
                 2022
             </label>
@@ -142,74 +247,18 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
         </div>
     </div>
 </div>
-<section id="walkthrough">
-    <h3>Installer walkthrough</h3>
-    <p class="small">Hover over the images to enlarge. Where to click is circled in yellow.</p>
-    <ul>
-        <li>
-            <a id="walkthrough_1" href="#walkthrough_1" class="btn border-1 border-info p-0 ms-2 d-block">
-                <img src="images/1-select_port.png"
-                     alt="screen capture showing port selection">
-            </a>
-            First, your browser will display a list of serial ports. Select the correct port and click Connect.
-            <ul>
-                <li>If no ports are listed (or if you get a screen saying you didn&rsquo;t select a port),
-                    you might still need to install the driver (see <strong><a href="#step2">Step 2</a></strong>)... or
-                    just try again.
-                    we have one old computer in the lab that is so slow it always takes two tries.
-                </li>
-                <li>If multiple ports are listed, select the one that has &ldquo;CP2102N&rdquo;
-                    in its name.
-                </li>
-                <li>If multiple ports show &ldquo;CP2102&rdquo;,
-                    cancel, disconnect the ESP32, try again, write down the ports that are listed, cancel
-                    again, reconnect the ESP32, and select the new port that wasn't in the previous list.
-                </li>
-            </ul>
-        <li>
-            <a id="walkthrough_2" href="#walkthrough_2" class="btn border-1 border-info p-0 ms-2">
-                <img src="images/2-device_dashboard.png" alt="screen capture showing device dashboard">
-            </a>
-            From the &ldquo;Device Dashboard&ldquo;, confirm that you
-            have selected the firmware for the correct model year, then click it if correct.
-            Click the close button at the upper right (&times;) to cancel.
-        </li>
-        <li>
-            <a id="walkthrough_3" href="#walkthrough_3" class="btn border-1 border-info p-0 ms-2">
-                <img src="images/3-erase_device.png" alt="screen capture showing device erase option">
-            </a>
-            You have an option to erase the device. I have never found this to
-            be necessary, but it won't hurt if you feel like enabling that checkbox.
-            Click Next to continue or the close button at the upper right (&times;) to cancel.
-        </li>
-        <li>
-            <a id="walkthrough_4" href="#walkthrough_4" class="btn border-1 border-info p-0 ms-2">
-                <img src="images/4-confirm.png" alt="screen capture showing confirmation">
-            </a>
-            Last chance to confirm that you are installing the correct firmware for your scarecrow!
-            You can still click the close button at the upper right (&times;) to cancel.
-        </li>
-        <li>
-            <a id="walkthrough_6" href="#walkthrough_6" class="btn border-1 border-info p-0 ms-2">
-                <img src="images/6-complete.png" alt="screen capture showing completion">
-            </a>
-            After usually less than the estimated 2 minutes, you should see that the installation is complete. Click
-            next.
-        </li>
-        <li>
-            <a id="walkthrough_7" href="#walkthrough_7" class="btn border-1 border-info p-0 ms-2">
-                <img src="images/7-dashboard_close.png"
-                     alt="screen capture showing dashboard with close button circled">
-            </a>
-            You will return to the dashboard and can click the close button at the upper right (&times;) to finish.
-            If you have any doubts about whether the microcontroller is running the correct firmware,
-            you may optionally click &ldquo;LOGS &amp; CONSOLE&rdquo;, then click &ldquo;RESET DEVICE&rdquo; and wait
-            to check the last line after everything finishes scrolling. Then click &ldquo;BACK&rdquo; and close the
-            updater or try again.
-        </li>
+<p class="info"><strong>Troubleshooting:</strong>
+    💡Make sure the port you select says something about
+    <strong>CP2102</strong> or <strong>CP2102N</strong>
+    in its description. On macOS, the name may be more cryptic, something like
+    <strong>/dev/cu.SLAB_USBtoUART<em>##</em></strong> where the number ## may vary.
+    💡If no devices/ports appear, try reloading this page.
+    💡If you get an error about the port being in use, also try reloading this page. (Be sure you picked the correct
+    port!)
+    💡Too many choices? Figure out which
+    is the Scarecrow by unplugging it. Then plug it back in and see what appears in the list.
+</p>
 
-    </ul>
-</section>
 <h2>Step 4: Disconnect the cable</h2>
 <p>After the firmware has been updated, unplug the cable. (You don't need to &ldquo;eject&rdquo;/unmount it or
     anything.)</p>
@@ -218,25 +267,19 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     in the sockets. Push straight down on the pins on the sides until the microcontroller board is flush with the top of
     the sockets.</p>
 <div class="caution d-sm-flex flex-sm-row">
-    <p>It's possible to plug the microcontroller in rotated 180&deg;. This would surely damage it when turned on.
-        To be sure you have the correct rotation, see the images back in <strong><a href="#step1">Step 1</a></strong> &mdash; all
-        models
-        are similar in their arrangement. You can match the orientation of the module to the sketch shown here and
-        silk-screened (white on green or white on blue) on the board.
-        The USB micro connector is represented at the bottom of this sketch, between the two push buttons (circles in
-        rectangles).
-        The actual USB microconnector should be above that part of the image on the board.</p>
-    <p class="ms-sm-2"><img src="images/ESP32-DevKitC-silkscreen.png"
-                            alt="sketch of module as silk-screened on main board"></p>
+    <p>It's unlikely but physically possible to insert the microcontroller rotated by 180&deg;. This would surely damage it when turned on.
+        To be sure you have the correct rotation, see the images back in <strong><a href="#step1">Step 1</a></strong>
+        &mdash; all        models         are similar in their arrangement. A schematic outline of the module is
+        silk-screened (white on green or white on blue) on the board. Match the orientation of the module to the
+        outline as shown in this side-by-side image.</p>
+    <p class="ms-sm-2"><img src="images/module-and-silkscreen.png"
+                            alt="Photograph of the ESP32-DevKitC next to its silk-screened outline on main board"></p>
 </div>
 <h2>Step 5: Run a self-test</h2>
 <p>It seems prudent to make sure your scarecrow works after all this!</p>
 <p>The self-test procedure is in the URI Laser Scarecrow Operating Manual.
     If you need a copy, please visit <a href="https://laserscarecrow.info/">https://laserscarecrow.info/</a>.</p>
 
-<aside style="float: right; max-width: 25%;"><img src="images/MOD-ESP32-DEVKITC-VIE.png"
-                                                  alt="Photograph of the ESP32-DevKitC"
-                                                  style="max-width: 100%; max-height: 128px;"></aside>
 <h2>If you need to buy a new microcontroller</h2>
 <p>The microcontroller for the 2022-2024 scarecrow models is the Espressif ESP32-DEVKITC-VIE.
     As of April 2024, these are still in mass production by the manufacturer. We have purchased them from...</p>

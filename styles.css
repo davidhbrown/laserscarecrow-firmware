@@ -57,17 +57,19 @@ label > button {
     padding: 0;
 }
 
-#walkthrough > ul > li > a[id] {
+#walkthrough > ul > li > a[id], #walkthrough label {
     max-width: 128px;
     transition: max-width 1s ease-in;
     float: right;
 }
-#walkthrough > ul > li > a[id]:hover, #walkthrough > ul > li > a[id]:target {
+#walkthrough > ul > li > a[id]:hover,
+#walkthrough > ul > li > a[id]:target,
+#walkthrough input:checked+label {
     max-width: 50%;
     transition: max-width 0.5s ease-in;
 }
 
-#walkthrough > ul > li > a[id] > img {
+#walkthrough > ul > li > a[id] > img, #walkthrough label img {
     max-width: 100%;
 }
 

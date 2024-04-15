@@ -4,3 +4,4 @@
 !/node_modules/esp-web-tools/dist
 /node_modules/esp-web-tools/dist/*
 !/node_modules/esp-web-tools/dist/web
+/images/original/

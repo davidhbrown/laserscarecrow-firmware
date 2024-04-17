@@ -47,7 +47,7 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     and the other end should connect to your computer. It should also work if you need an adapter between your computer
     and the cable.
     <li>If you have set your browser to block third-party scripts, allow scripts to load from https://unpkg.com/</li>
-    <li>One time-only: you'll possibly need to install a driver so your computer can talk to the microcontoller</li>
+    <li>One time-only: you'll probably need to install a driver so your computer can talk to the microcontoller</li>
 </ul>
 
 <h2 id="step1">Step 1: Connect the microcontroller to your computer</h2>
@@ -60,16 +60,16 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
 <p>The scarecrow should be turned off and disconnected from 12V power (you don't need it).
     Put the cap on the laser module.</p>
 <p>Open the scarecrow bucket and rotate it so that the key switch is toward you.
-    Find the microcontroller on the left side of the main circuit board.
+    Find the microcontroller module plugged into the left side of the main circuit board.
     It is about an inch wide and two inches tall with columns of silvery dots on either edge.</p>
 <p>Use a good quality USB micro-B data cable
-    to connect your computer to the microcontroller. (A charging-only cable like might have
+    to connect your computer to the module. (A charging-only cable such as might have
     come with an older phone won't work.) The USB
     port is toward you and the wider side of the micro-B plug faces up. </p>
 <section class="container text-center">
     <div class="row align-items-start">
         <figure class="col">
-            <figcaption>ESP32 in 2023 scarecrow (no power)</figcaption>
+            <figcaption>Microcontroller module in 2023 scarecrow (no power)</figcaption>
             <img src="images/2023_esp32.png"></figure>
         <figure class="col">
             <figcaption>USB cable plugged in (power LED on)</figcaption>
@@ -98,9 +98,10 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     about not having a driver for the device &mdash; install the driver yourself. If you get a message about the device
     being ready to use, go on to the next step.</p>
 
-<p>If nothing obvious happens, you can just go on to the next step and see if it works.</p>
+<p>If nothing obvious happens, you can just go on to the next step and see if it works (won&rsquo;t hurt to try),
+    or you could install the driver just to be sure (won&rsquo;t hurt to install it twice).</p>
 <h3>Installing the driver</h3>
-The EPS32 DevkitC use the <strong>CP2102</strong>
+The scarecrow's microcontroller module uses the <strong>CP2102</strong>
 USB interface chip from Silicon Labs. You can download the CP210x
 series driver
 from <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads">
@@ -114,7 +115,7 @@ from <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?t
 </p>
 <p><em>Optional:</em> You can confirm whether the microcontroller is recognized by looking for it within &ldquo;Ports (COM &amp; LPT)&rdquo;
     in the Device Manager. It should say &ldquo;Silicon Labs CP210x USB to UART Bridge (COM<em>#</em>)&rdquo; (the # is
-    some     one- or two-digit number).
+    some one- or two-digit number).
 </p>
 <h4>macOS</h4>
 <p>Download and unzip the &ldquo;CP210x VCP Mac OSX Driver&rdquo;. Then double-click
@@ -125,7 +126,7 @@ from <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?t
     Security &amp; Privacy, and find at the bottom of the tab where it says that System software from developer Silicon
     Labs
     was blocked. Click the Allow button.</p>
-<p><em>Optional:</em> To confirm that the microcontroller is connected, open the System Information, then within Hardware tree select USB.
+<p><em>Optional:</em> To confirm that the microcontroller is recognized, open the System Information, then within Hardware tree select USB.
     Open all the items (busses, hubs) and you should find one (or more) named &ldquo;CP2102 USB to UART
     Bridge&rdquo;.</p>
 <p class="info"><strong>Troubleshooting:</strong> Try a different cable. Try a different USB port on your computer
@@ -269,22 +270,22 @@ The installer runs in a pop-up wizard that has limited help, so let's preview wh
 <h2>Step 4: Disconnect the cable</h2>
 <p>After the firmware has been updated, unplug the cable. (You don't need to &ldquo;eject&rdquo;/unmount it or
     anything.)</p>
-<h3>Replace the microcontroller (only if removed)</h3>
-<p>If you removed the microcontroller for easier access, replace it. Align each pin on the microcontroller with a hole
-    in the sockets. Push straight down on the pins on the sides until the microcontroller board is flush with the top of
+<h3>Replace the microcontroller module (only if removed)</h3>
+<p>If you removed the microcontroller module for easier access, replace it. Align each pin on the module bottom with a hole
+    in the sockets. Push straight down on the pins on the sides until the module board is flush with the top of
     the sockets.</p>
 <div class="caution d-sm-flex flex-sm-row">
-    <p>It's unlikely but physically possible to insert the microcontroller rotated by 180&deg;. This would surely damage it when turned on.
+    <p>It's unlikely but physically possible to insert the microcontroller module rotated by 180&deg;. This would surely damage it when turned on.
         To be sure you have the correct rotation, see the images back in <strong><a href="#step1">Step 1</a></strong>
         &mdash; all        models         are similar in their arrangement. A schematic outline of the module is
         silk-screened (white on green or white on blue) on the board. Match the orientation of the module to the
         outline as shown in this side-by-side image.</p>
     <p class="ms-sm-2"><img src="images/module-and-silkscreen.png"
-                            alt="Photograph of the ESP32-DevKitC next to its silk-screened outline on main board"></p>
+                            alt="Photograph of the microcontroller module next to its silk-screened outline on main board"></p>
 </div>
 <h2>Step 5: Run a self-test</h2>
 <p>It seems prudent to make sure your scarecrow works after all this!</p>
-<p>The self-test procedure is in the URI Laser Scarecrow Operating Manual.
+<p>The self-test procedure is in your URI Laser Scarecrow Operating Manual.
     If you need a copy, please visit <a href="https://laserscarecrow.info/">https://laserscarecrow.info/</a>.</p>
 
 <h2>If you need to buy a new microcontroller</h2>
@@ -299,7 +300,7 @@ The installer runs in a pop-up wizard that has limited help, so let's preview wh
     </li>
 </ul>
 <p>
-    You can substitute <strong>only</strong> the ESP32-DevKitC-VE. (The only difference is the antenna which we don't
+    You can substitute <strong>only</strong> the ESP32-DevKitC-VE. (The difference is the antenna which we don't
     use anyway.)
     There many other variations with similar names that <strong>will not work</strong>,
     so be careful if you search for a replacement online. Do not buy, for example,
@@ -307,7 +308,7 @@ The installer runs in a pop-up wizard that has limited help, so let's preview wh
 </p>
 <p><em>Huge thanks and credit to <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>
     for making this (relatively) easy to use!</em></p>
-<p class="small">USB micro-b image adapted from work by Fred the Oyster, CC BY-SA 4.0,
+<p class="small">USB micro-B image adapted from work by Fred the Oyster, CC BY-SA 4.0,
     https://commons.wikimedia.org/w/index.php?curid=36172898</p>
 <footer>
 

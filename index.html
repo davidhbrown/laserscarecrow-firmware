@@ -13,10 +13,7 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
 </head>
 <body>
-<script
-        type="module"
-        src="https://unpkg.com/esp-web-tools@9/dist/web/install-button.js?module"
-></script>
+<script type="module" src="https://unpkg.com/esp-web-tools@9/dist/web/install-button.js?module"></script>
 <header class="container text-center d-flex flex-row justify-content-between">
     <img src="images/agronomy.png" alt="Vegetables at URI illustration" style="max-height: 5em;">
     <div><h1>URI Laser Scarecrow Firmware</h1><p>Models 2022, 2023, and 2024</p></div>
@@ -43,7 +40,7 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
         or Edge browser (not Firefox nor Safari)
     </li>
     <li>A USB micro-B data cable to connect to your computer. One end should look like this:</li>
-    <img src="images/USB_Micro-B.svg" style="max-height: 2em;">
+    <img src="images/USB_Micro-B.svg" style="max-height: 2em;" alt="Micro-USB plug diagram; trapezoidal outline">
     and the other end should connect to your computer. It should also work if you need an adapter between your computer
     and the cable.
     <li>If you have set your browser to block third-party scripts, allow scripts to load from https://unpkg.com/</li>
@@ -70,10 +67,10 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     <div class="row align-items-start">
         <figure class="col">
             <figcaption>Microcontroller module in 2023 scarecrow (no power)</figcaption>
-            <img src="images/2023_esp32.png"></figure>
+            <img src="images/2023_esp32.png" alt="A small circuit bord about 2in tall and 1in wide with a column of 18 pins on the left and right, two pushbuttons at the bottom, and a silvery metal case covering most of the central and upper area"></figure>
         <figure class="col">
             <figcaption>USB cable plugged in (power LED on)</figcaption>
-            <img src="images/2023_esp32_usb.png"></figure>
+            <img src="images/2023_esp32_usb.png" alt="An image of the ESP32 module mounted in the 2023 circuit board with a black USB cable plugged into the bottom of the ESP32 and the module's power LED shining red"></figure>
     </div>
 </section>
 <p class="info"><strong>Troubleshooting:</strong> Windows (but not macOS) will make a sound when you connect a device.
@@ -101,7 +98,7 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
 <p>If nothing obvious happens, you can just go on to the next step and see if it works (won&rsquo;t hurt to try),
     or you could install the driver just to be sure (won&rsquo;t hurt to install it twice).</p>
 <h3>Installing the driver</h3>
-The scarecrow's microcontroller module uses the <strong>CP2102</strong>
+<p>The scarecrow's microcontroller module uses the <strong>CP2102</strong>
 USB interface chip from Silicon Labs. You can download the CP210x
 series driver
 from <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads">
@@ -159,6 +156,7 @@ The installer runs in a pop-up wizard that has limited help, so let's preview wh
             From the &ldquo;Device Dashboard&ldquo;, confirm that you
             have selected the firmware for the correct model year, then click it if correct.
             Click the close button at the upper right (&times;) to cancel.
+        <ul><li>I very often get an error at this step. Just try again if you do.</li></ul>
         </li>
         <li>
             <input id="walkthrough_3" type="checkbox" class="d-none">

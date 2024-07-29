@@ -86,6 +86,7 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
         far enough past the thin flat antenna that you can lift the actual circuit board (see photo; all models are
         similar),
         then pull it straight up out of the sockets.</p>
+    <p>If you do remove the microcontroller, be exceedingly careful to replace it correctly; see caution below.</p>
     <p class="ms-sm-2"><img src="images/microcontroller_removal.jpg"
                             alt="close-up photograph of removing the EPS32 microcontroller"></p>
 </div>
@@ -273,7 +274,11 @@ The installer runs in a pop-up wizard that has limited help, so let's preview wh
     in the sockets. Push straight down on the pins on the sides until the module board is flush with the top of
     the sockets.</p>
 <div class="caution d-sm-flex flex-sm-row">
-    <p>It's unlikely but physically possible to insert the microcontroller module rotated by 180&deg;. This would surely damage it when turned on.
+    <p>Make very sure the microcontroller is inserted correctly! I (David) have killed at least three over the years
+    by not being careful enough. Within a minute of being powered incorrectly the LDO voltage regulator will get hot enough to smoke!
+        (That's the chip in the middle with three pins on the left and a tab on the right.)</p>
+    <p>It's unlikely but physically possible to insert the microcontroller module rotated by 180&deg;.
+        This would surely damage it when turned on.
         To be sure you have the correct rotation, see the images back in <strong><a href="#step1">Step 1</a></strong>
         &mdash; all        models         are similar in their arrangement. A schematic outline of the module is
         silk-screened (white on green or white on blue) on the board. Match the orientation of the module to the

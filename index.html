@@ -46,6 +46,11 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     <li>If you have set your browser to block third-party scripts, allow scripts to load from https://unpkg.com/</li>
     <li>One time-only: you'll probably need to install a driver so your computer can talk to the microcontoller</li>
 </ul>
+<h2>Step 0: Be sure the microcontroller is okay</h2>
+<p>If you have a new microcontroller or if the scarecrow is working, you can skip this step.
+    If you suspect that your microcontroller may be damaged
+(power light does not come on, perhaps), it might damage your computer&rsquo;s USB port. There is a component on the
+microcontroller board that may overheat.
 
 <h2 id="step1">Step 1: Connect the microcontroller to your computer</h2>
 <p class="caution">Electronics like the microcontroller and other parts in the scarecrow can be damaged
@@ -250,6 +255,20 @@ The installer runs in a pop-up wizard that has limited help, so let's preview wh
                 <p class="small">This update improves the random motion when the active area allowed by the tape sensor
                     is very
                     small.</p>
+            </div>
+        </div>
+        <div class="col">
+            <label for="bp2025" class="btn btn-outline-primary p-0">
+                <strong>modified</strong> 2024 board
+                <img src="images/2025_berry_proto.png" alt="The 2025 Berry Prototype is a modification of the 2024 version">
+                2025 Berry Prototype
+            </label>
+            <input type="radio" name="model" value="bp2025" id="bp2025">
+            <div>
+                <esp-web-install-button manifest="ls2025-3.1.0_manifest.json">
+                    <button slot="activate" class="btn btn-warning">Install v3.1.0 for 2025 Berry Prototype (dual laser)</button>
+                </esp-web-install-button>
+                <p class="small">This is the release version of the firmware; no changes have been made.</p>
             </div>
         </div>
     </div>

@@ -1,0 +1,17 @@
+{
+  "name": "URI Berry Prototype 2025",
+  "version": "3.1.0",
+  "funding_url": "https://laserscarecrow.info",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "ls2025-3.1.0.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

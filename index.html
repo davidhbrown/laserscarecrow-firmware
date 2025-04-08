@@ -47,12 +47,18 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     <li>If you have set your browser to block third-party scripts, allow scripts to load from https://unpkg.com/</li>
     <li>One time-only: you'll probably need to install a driver so your computer can talk to the microcontoller</li>
 </ul>
-<h2>Step 0: Be sure the microcontroller is okay</h2>
-<p>If you have a new microcontroller or if the scarecrow is working, you can skip this step.
+<h2 id="step0">Step 0: Be sure the microcontroller is okay</h2>
+<p>If you have a new microcontroller or if the scarecrow is working, the microcontroller is probably fine; continue
+    to the next step.</p>
+<p><img src="images/ESP32regulator.png" alt="Close-up of ESP32 modulator with power regulator circled" style="float:right" height="128" width="256">
     If you suspect that your microcontroller may be damaged
-(power light does not come on, perhaps), it might damage your computer&rsquo;s USB port. There is a component on the
-microcontroller board that may overheat.
-
+(power light does not come on, perhaps), it might damage your computer&rsquo;s USB port. Most of the ways the microcontroller
+    can be damaged result in excess current draw and overheat the power regulator, circled in the image to the right.
+    If you have a power adapter that you can use to try powering the microcontroller
+instead of your computer, that would be a good first step. Unplug it immediately if either the power adapter or the
+    regulator/microcontroller start to smell funny or smoke! If the microcontroller's red power LED illuminates for
+30 seconds without the regulator overheating (be careful if you touch it), it's probably safe to connect to your computer.
+</p>
 <h2 id="step1">Step 1: Connect the microcontroller to your computer</h2>
 <p class="caution">Electronics like the microcontroller and other parts in the scarecrow can be damaged
     or destroyed by static electricity. Before working with electronic components...
@@ -92,7 +98,7 @@ microcontroller board that may overheat.
         far enough past the thin flat antenna that you can lift the actual circuit board (see photo; all models are
         similar),
         then pull it straight up out of the sockets.</p>
-    <p>If you do remove the microcontroller, be exceedingly careful to replace it correctly; see caution below.</p>
+    <p class="mx-sm-2"><small>If you do remove the microcontroller, be exceedingly careful to replace it correctly; see caution below.</small></p>
     <p class="ms-sm-2"><img src="images/microcontroller_removal.jpg"
                             alt="close-up photograph of removing the EPS32 microcontroller"></p>
 </div>
@@ -295,8 +301,8 @@ The installer runs in a pop-up wizard that has limited help, so let's preview wh
     the sockets.</p>
 <div class="caution d-sm-flex flex-sm-row">
     <p>Make very sure the microcontroller is inserted correctly! I (David) have killed at least three over the years
-    by not being careful enough. Within a minute of being powered incorrectly the LDO voltage regulator will get hot enough to smoke!
-        (That's the component in the middle with three pins on the left and a tab on the right.)</p>
+    by not being careful enough. Within a minute of being powered incorrectly the microcontroller's voltage regulator 
+        can get hot enough to smoke! (See photo in <a href="#step0">Step 0</a> to identify the regulator.)</p>
     <p>It's unlikely but physically possible to insert the microcontroller module rotated by 180&deg;.
         This would surely damage it when turned on.
         To be sure you have the correct rotation, see the images back in <strong><a href="#step1">Step 1</a></strong>
@@ -312,8 +318,8 @@ The installer runs in a pop-up wizard that has limited help, so let's preview wh
     If you need a copy, please visit <a href="https://laserscarecrow.info/">https://laserscarecrow.info/</a>.</p>
 
 <h2>If you need to buy a new microcontroller</h2>
-<p>The microcontroller for the 2022-2024 scarecrow models is the Espressif ESP32-DEVKITC-VIE.
-    As of April 2024, these are still in mass production by the manufacturer. We have purchased them from...</p>
+<p>The microcontroller for the 2022-2024 scarecrow models (and the 2025 Berry Prototype) is the Espressif ESP32-DEVKITC-VIE.
+    As of April 2025, these are still in mass production by the manufacturer. We have purchased them from...</p>
 <ul>
     <li>
         <a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-VIE/12091811">Digikey</a>

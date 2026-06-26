@@ -17,7 +17,7 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
 <script type="module" src="https://unpkg.com/esp-web-tools@9/dist/web/install-button.js?module"></script>
 <header class="container text-center d-flex flex-row justify-content-between">
     <img src="images/agronomy.png" alt="Vegetables at URI illustration" style="max-height: 5em;">
-    <div><h1>URI Laser Scarecrow Firmware</h1><p>Models 2022, 2023, and 2024</p></div>
+    <div><h1>URI Laser Scarecrow Firmware</h1><p>Models 2022, 2023, 2024, and 2025 berry prototype</p></div>
     <img src="images/danger.png" alt="FDA CDRH Class IIIB Laser Radiation Warning Label" style="max-height: 5em;">
 </header>
 <!-- github.io pages can't find this in the subdirectory -->
@@ -37,13 +37,14 @@ C:\Users\dave\.espressif\python_env\idf4.4_py3.8_env\Scripts\python.exe C:\Users
     Or if you needed to replace the microcontroller, you could program the new one using this page.</p>
 <h2>What you need</h2>
 <ul>
-    <li>A computer (not a phone/tablet) and the <a href="https://www.google.com/chrome/">Chrome</a>
-        or Edge browser (not Firefox nor Safari)
+    <li>A computer (not a phone/tablet) and an up-to-date <a href="https://www.google.com/chrome/">Chrome</a>,
+        <a href="https://www.firefox.com">Firefox</a>, or Edge browser.
+        (Safari does not currently offer <a href="https://caniuse.com/web-serial">support for the Web Serial API</a>.)
     </li>
-    <li>A USB micro-B data cable to connect to your computer. One end should look like this:</li>
-    <img src="images/USB_Micro-B.svg" style="max-height: 2em;" alt="Micro-USB plug diagram; trapezoidal outline">
+    <li>A USB micro-B data cable to connect to your computer. One end should look like this:<br>
+    <img src="images/USB_Micro-B.svg" style="max-height: 2em;" alt="Micro-USB plug diagram; trapezoidal outline"><br>
     and the other end should connect to your computer. It should also work if you need an adapter between your computer
-    and the cable.
+    and the cable.</li>
     <li>If you have set your browser to block third-party scripts, allow scripts to load from https://unpkg.com/</li>
     <li>One time-only: you'll probably need to install a driver so your computer can talk to the microcontoller</li>
 </ul>
@@ -79,7 +80,7 @@ instead of your computer, that would be a good first step. Unplug it immediately
     <div class="row align-items-start">
         <figure class="col">
             <figcaption>Microcontroller module in 2023 scarecrow (no power)</figcaption>
-            <img src="images/2023_esp32.png" alt="A small circuit bord about 2in tall and 1in wide with a column of 18 pins on the left and right, two pushbuttons at the bottom, and a silvery metal case covering most of the central and upper area"></figure>
+            <img src="images/2023_esp32.png" alt="A small circuit board about 2in tall and 1in wide with a column of 18 pins on the left and right, two pushbuttons at the bottom, and a silvery metal case covering most of the central and upper area"></figure>
         <figure class="col">
             <figcaption>USB cable plugged in (power LED on)</figcaption>
             <img src="images/2023_esp32_usb.png" alt="An image of the ESP32 module mounted in the 2023 circuit board with a black USB cable plugged into the bottom of the ESP32 and the module's power LED shining red"></figure>
